@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rpslsApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+	<link rel="icon" type="image/png" href="img/spock.png">
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+    <link res="stylesheet" href="css/angular-chart.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" ng-controller="mainController">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#instructions">Instructions</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#game">Game</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#stats">Stats</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+                <hr>
+                <p>A fun addition to the standard Rock, Paper, Scissors game!</p>
+                <p class="name-input">
+                	<label>Enter your name to get started:</label>
+                	<input type="text" ng-model="playerName" select-on-click>
+                </p>
+                <a href="#instructions" class="btn btn-primary btn-xl page-scroll">Read The Instructions</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="instructions">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">How To Play</h2>
+                    <hr class="light">
+                    <p class="text-faded">To play, make your choice by clicking on the image of your choice below.  Once you have chosen, the computer's choice will be revealed to you.  To win, your choice has to beat the computer's choice, as shown in the image below:</p>
+                    <img class="how-to-play" src="img/rpsls.jpg" /><br><br>
+                    <a href="#game" class="btn btn-default btn-xl">Play The Game!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game" class="no-padding">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{{playerName}}, Choose Your Weapon</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" ng-controller="rpslsController">
+            <div class="row no-gutter game">
+            	<div class="col-lg-1 col-sm-1"></div>
+            	<div class="col-lg-2 col-sm-2 portfolio-box" ng-repeat="choice in choices">
+            		<a ng-click="letsPlay(choice)" class="portfolio-box">
+		                <img ng-src="{{choice.image}}" class="img-responsive" alt="">
+		                <div class="portfolio-box-caption">
+		                    <div class="portfolio-box-caption-content">
+		                        <div class="project-name">
+		                            {{choice.name}}
+		                        </div>
+		                    </div>
+		                </div>
+	                </a>
+                </div>
+                <div class="col-lg-1 col-sm-1"></div>
+            </div>
+            <div class="row no-gutter">
+	            <section class="no-padding" id="stats">
+	            	<!--
+		        	<div class="row no-gutter">
+		                <div class="col-lg-12 text-center">
+		                    <h2 class="section-heading">Stats</h2>
+		                    <hr class="primary">
+		                </div>
+		            </div>
+		            -->
+		            <div class="row no-gutter">
+		                <div class="col-lg-6 col-sm-6">
+		                	<div class="row no-gutter">
+		                		<div class="col-lg-12 text-center">
+		                    		<h2 class="section-heading">Game</h2>
+		                    		<hr class="primary">
+		                		</div>
+		            		</div>
+		                	<div class="row">
+			                	<div class="col-lg-1"></div>
+		                		<div class="col-lg-4 col-sm-3 player portfolio-box">
+		                			<p>
+			                			{{playerName}}<br>
+										<img ng-src='{{playerChoice.image}}' class="img-responsive">
+									</p>
+		                		</div>
+		                		<div class="col-lg-2 col-sm-2 vs">
+		                			Vs.
+		                		</div>
+		                		<div class="col-lg-4 col-sm-3 computer portfolio-box">
+		                			<p>
+			                			Computer<br>
+										<img ng-src='{{computerChoice.image}}' class="img-responsive">
+									</p>
+		                		</div>
+		                		<div class="col-lg-1"></div>
+	                		</div>
+	                		<div class="row">
+		            			<div class="col-lg-12 col-sm-6 results">
+		            				<p>{{resultText}}</p>
+		            			</div>
+		            		</div>
+		                </div>
+		                <div class="col-lg-6 col-sm-6 stats">
+		                	<div class="row no-gutter">
+		                		<div class="col-lg-12 text-center">
+		                    		<h2 class="section-heading">Stats</h2>
+		                    		<hr class="primary">
+		                		</div>
+		            		</div>
+		            		<div class="row">
+			                	<div class="col-lg-6 col-sm-3">
+			                		<div class="row">
+			                			<div class="col-lg-12 text-center">
+			                				<h2 class="section-heading">Game Stats</h2>
+			                				<hr class="primary">
+			                			</div>
+			                		</div>
+			                		<div class="row">
+			                			<div class="col-lg-12 text-center">
+						                	<p>
+							                	Played: {{played}}<br>
+												Won: {{won}}<br>
+												Lost: {{lost}}<br>
+												Tied: {{tied}}<br>
+												<br><br><br>
+												<button ng-click="resetStats()" class="btn btn-default btn-xl wow tada">Reset</button>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-sm-3">
+									<div class="row">
+			                			<div class="col-lg-12 text-center">
+			                				<h2 class="section-heading">Chart</h2>
+			                				<hr class="primary">
+			                			</div>
+			                		</div>
+									<div class="row">
+										<div class="col-lg-12">
+											<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels"></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+		                </div>
+		            </div>
+		    	</section>
+	    	</div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>Thank you for playing!</h2>
+                <a href="#" class="btn btn-default btn-xl wow tada">Top</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    
+    <!-- Angular script and page JavaScript -->
+	<script src="http://code.angularjs.org/1.3.8/angular.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/angular-chart.min.js"></script>
+	<script src="js/rpsls.js"></script>
+</body>
+
+</html>

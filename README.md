@@ -1,26 +1,12 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
+# rpsls
+rpsls is a simple Angular app for playing the game Rock, Paper, Scissors, Lizard, Spock.
 
-[Creative](http://startbootstrap.com/template-overviews/creative/) is a one page creative theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+# Installation
+To install, download the folders and files, and put them in a location you'll remember, like the C drive, in a folder called rpsls
 
-## Getting Started
+The files include a server.js file to use if you want to run a simple node.js web server.  To use the node.js web server, start the server.js file either through your IDE, running the server.js as a node application, or from the command line by using: $node server.js
 
-To use this theme, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
+To use Wamp, Lamp, or Mamp, just copy the rpsls folder into your www folder on your web server, or local machine, and start apache.
 
-## Bugs and Issues
-
-Have a bug or an issue with this theme? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-creative/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/creative/).
-
-## Creator
-
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Partner at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-creative/blob/gh-pages/LICENSE) license.
+# Usage
+Once your server is started, you can test the app out by going to http://localhost/rpsls/rpsls.html

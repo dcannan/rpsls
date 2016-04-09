@@ -1,5 +1,6 @@
 # rpsls
 rpsls is a simple Angular app for playing the game Rock, Paper, Scissors, Lizard, Spock.
+The application uses the bootstrap creative free theme, modified with images and changes I made to make the application look better.
 
 # Installation
 To install, download the folders and files, and put them in a location you'll remember, like the C drive, in a folder called rpsls
